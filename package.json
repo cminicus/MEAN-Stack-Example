@@ -9,6 +9,7 @@
   "author": "Clayton Minicus",
   "license": "MIT",
   "dependencies": {
+    "bower": "^1.4.1",
     "express": "^4.13.3",
     "jade": "^1.11.0"
   }
