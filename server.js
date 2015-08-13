@@ -11,4 +11,4 @@ require('./server/config/routes')(app);
 
 // connection
 app.listen(config.port);
-console.log("Listening on port " + config.port + " ...");
+console.log('Listening on port ' + config.port + ' ...');
