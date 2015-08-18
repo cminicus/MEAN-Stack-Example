@@ -2,11 +2,9 @@ angular.module('app', ['ngResource', 'ngRoute'])
 
 .config(function($routeProvider, $locationProvider) {
 	var routeRoleChecks = {
-		{
-			admin: {
-				auth: function(mvIdentity, $q) {
-					return authorizeCurrentUserForRoute('admin');
-				}
+		admin: {
+			auth: function(mvIdentity, $q) {
+				return authorizeCurrentUserForRoute('admin');
 			}
 		}
 	}
