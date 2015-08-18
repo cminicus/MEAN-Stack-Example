@@ -14,6 +14,8 @@ module.exports = function(app) {
 
 	// client side takes care of page routing, this just always gives the index page
 	app.get('*', function(request, response) {
-		response.render('index');
+		response.render('index', {
+			bootstrappedUser: request.user
+		});
 	});
 }
