@@ -9,11 +9,12 @@ var app = express();
 var config = require('./server/config/config')[env];
 require('./server/config/express')(app, config);
 require('./server/config/mongoose')(config);
+
 var User = mongoose.model('User');
 passport.use(new LocalStrategy(
   function(username, password, done) {
     User.findOne({username: username}).exec(function(error, user) {
-      if (user) {
+      if (user && user.authenticate(password)) {
         return done(null, user);
       } else {
         return done(null, false);
@@ -35,6 +36,7 @@ passport.deserializeUser(function(id, done) {
     }
   });
 });
+
 require('./server/config/routes')(app);
 
 // connection

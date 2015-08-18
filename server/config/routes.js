@@ -7,6 +7,10 @@ module.exports = function(app) {
 	});
 
 	app.post('/login', auth.authenticate);
+	app.post('/logout', function(request, response) {
+		request.logout();
+		response.end();
+	});
 
 	// client side takes care of page routing, this just always gives the index page
 	app.get('*', function(request, response) {
