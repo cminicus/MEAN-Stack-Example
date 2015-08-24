@@ -5,6 +5,10 @@ angular.module('app').service('mvNotifier', function(mvToastr) {
     notify: function(message) {
       mvToastr.success(message);
       console.log(message);
+    },
+    error: function(message) {
+      mvToastr.error(message);
+      console.log(message);
     }
   };
 });

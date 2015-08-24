@@ -15,10 +15,15 @@ angular.module('app', ['ngResource', 'ngRoute'])
 		.when('/', {
 			templateUrl: '/partials/main/main',
 			controller: 'mvMainCtrl'
-		}).when('/admin/users', {
+		})
+		.when('/admin/users', {
 			templateUrl: '/partials/admin/user-list',
 			controller: 'mvUserListCtrl',
 			resolve: routeRoleChecks.admin
+		})
+		.when('/signup', {
+			templateUrl: '/partials/account/signup',
+			controller: 'mvSignupCtrl'
 		});
 })
 
