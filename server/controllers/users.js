@@ -9,6 +9,7 @@ exports.getUsers = function(request, response) {
 
 exports.createUser = function(request, response, next) {
   var userData = request.body;
+  userData.username = userData.username.toLowerCase();
   userData.salt = encrypt.createSalt();
   userData.hashed_pwd = encrypt.hashPwd(userData.salt, userData.password);
   User.create(userData, function(error, user) {
